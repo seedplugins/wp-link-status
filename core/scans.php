@@ -184,7 +184,7 @@ class WPLNST_Core_Scans {
 		$scan->notify_address_email		= WPLNST_Core_Types::get_array_value($config, 'notify_address_email', '');
 		
 		// Content options tab
-		$scan->post_types				= (function_exists('did_action') && did_action('init'))? WPLNST_Core_Types::check_array_value($config, 'post_types', $post_types_keys, array()) : ((empty($config['post_types']) || !is_array($config['post_types']))? array() : $config['post_types']);
+		$scan->post_types				= WPLNST_Core_Types::check_array_value($config, 'post_types', $post_types_keys, array());
 		$scan->post_status				= WPLNST_Core_Types::check_array_value($config, 'post_status', $post_status_keys, array());
 		$scan->check_posts				= (!empty($scan->post_types) && is_array($scan->post_types) && !empty($scan->post_status) && is_array($scan->post_status));
 		$scan->comment_types 			= WPLNST_Core_Types::check_array_value($config, 'comment_types', array_keys(WPLNST_Core_Types::get_comment_types()), array());

@@ -242,7 +242,7 @@ class WPLNST_Admin extends WPLNST_Core_Module {
 			
 			// Check id and nonce submit
 			if (isset($_POST['scan_id']) && isset($_POST['scan_edit_nonce']))
-				add_action('admin_init', array(&$this, 'scans_edit_submit'));
+				add_action('init', array(&$this, 'scans_edit_submit'));
 		}
 	}
 

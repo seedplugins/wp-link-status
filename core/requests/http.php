@@ -109,6 +109,16 @@ class WPLNST_Core_HTTP_Request {
 			'CURLOPT_WRITEFUNCTION'		=> 'wplnst_http_read_stream',
 		);
 		
+		// IP resolve options
+		if (defined('CURL_IPRESOLVE_V4'))
+			$curlopts['CURLOPT_IPRESOLVE'] = CURL_IPRESOLVE_V4;
+
+		// HTTPS checks
+		if (0 === strpos($url, 'https')) {
+			$curlopts['CURLOPT_SSL_VERIFYHOST'] = false;
+			$curlopts['CURLOPT_SSL_VERIFYPEER'] = false;
+		}
+		
 		// Do the request
 		$response = WPLNST_Core_CURL::request($curlopts, array('CURLINFO_HEADER_OUT', 'CURLINFO_TOTAL_TIME', 'CURLINFO_SIZE_DOWNLOAD', 'CURLINFO_HEADER_SIZE'));
 		

@@ -73,18 +73,6 @@ class WPLNST_Core_CURL {
 			return $response;
 		}
 		
-		// IP resolve options
-		if (!isset($setopts['CURLOPT_IPRESOLVE']) && defined('CURL_IPRESOLVE_V4'))
-			$setopts['CURLOPT_IPRESOLVE'] = CURL_IPRESOLVE_V4;
-		
-		// HTTPS checks
-		if (!empty($setopts['CURLOPT_URL']) && 0 === strpos($setopts['CURLOPT_URL'], 'https')) {
-			if (!isset($setopts['CURLOPT_SSL_VERIFYHOST']))
-				$setopts['CURLOPT_SSL_VERIFYHOST'] = false;
-			if (!isset($setopts['CURLOPT_SSL_VERIFYPEER']))
-				$setopts['CURLOPT_SSL_VERIFYPEER'] = false;
-		}
-		
 		// Apply options
 		foreach ($setopts as $name => $value) {
 			if (defined($name))
