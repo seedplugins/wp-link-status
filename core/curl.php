@@ -79,7 +79,7 @@ class WPLNST_Core_CURL {
 		
 		// HTTPS checks
 		if (!empty($setopts['CURLOPT_URL']) && 0 === strpos($setopts['CURLOPT_URL'], 'https')) {
-			if (!isset($setopts['CURLOPT_IPRESOLVE']))
+			if (!isset($setopts['CURLOPT_SSL_VERIFYHOST']))
 				$setopts['CURLOPT_SSL_VERIFYHOST'] = false;
 			if (!isset($setopts['CURLOPT_SSL_VERIFYPEER']))
 				$setopts['CURLOPT_SSL_VERIFYPEER'] = false;

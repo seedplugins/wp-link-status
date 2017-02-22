@@ -3,7 +3,7 @@
 Plugin Name: WP Broken Link Status Checker
 Plugin URI: http://seedplugins.com/wp-link-status/
 Description: Check and manage HTTP response codes of all your content site links and images.
-Version: 1.0.3
+Version: 1.0.4
 Author: Pau Iglesias, SeedPlugins
 License: GPLv2 or later
 Text Domain: wplnst
@@ -20,7 +20,7 @@ require(dirname(__FILE__).'/core/boot.php');
 // This plugin constants
 define('WPLNST_FILE', __FILE__);
 define('WPLNST_PATH', dirname(WPLNST_FILE));
-define('WPLNST_VERSION', '1.0.3');
+define('WPLNST_VERSION', '1.0.4');
 
 // Check scan crawling action
 require_once(WPLNST_PATH.'/core/alive.php');
