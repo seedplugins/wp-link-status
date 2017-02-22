@@ -2,8 +2,8 @@
 Contributors: seedplugins, pauiglesias
 Tags: broken links, broken, links, crawler, headers, http, nofollow, redirections, scan, status, checker, url
 Requires at least: 3.4
-Tested up to: 4.4.2
-Stable tag: 1.0.1
+Tested up to: 4.5.2
+Stable tag: 1.0.2
 License: GPLv2 or later
 
 Link checker of all your content links and images, looking for broken links, check link redirections, warn of nofollow links, etc.
@@ -73,6 +73,12 @@ You can add the custom field name in the "Content options" tab of the scan, sele
 
 == Changelog ==
 
+= 1.0.2 =
+May 30th, 2016
+
+* Solved bug for missing Custom Post Types when saving scan data.
+* Solved bug enabling Custom Post Types under scan crawling.
+
 = 1.0.1 =
 February 25th, 2016
 
@@ -85,6 +91,9 @@ Release Date: February 11th, 2016
 * Tested code from WordPress 3.4 version.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Solved bugs related to Custom Post Types.
 
 = 1.0.1 =
 Solved bug editing config of a running scan.
