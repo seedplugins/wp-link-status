@@ -3,10 +3,10 @@ Contributors: seedplugins, pauiglesias
 Tags: broken links, broken, links, crawler, headers, http, nofollow, redirections, scan, status, checker, url
 Requires at least: 3.4
 Tested up to: 4.4.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 
-Check HTTP status response codes of all your content links and images, looking for broken links, redirections, nofollow links, etc.
+Link checker of all your content links and images, looking for broken links, check link redirections, warn of nofollow links, etc.
 
 == Description ==
 
@@ -18,7 +18,7 @@ Knowing that these crawling processes can hurt your server perfomance, we have t
 
 Once started, you can see results inmediately without having to wait for the scan to be completed. You can access to the results page doing a click in the scan name, or clicking the "Show results" link from the scan actions row.
 
-The crawler results page shows all links detected according to the scan configuration, allowing basic filtering options.
+The crawler results page shows all links checked according to the scan configuration, allowing basic filtering options.
 
 You can read a detailed user guide and the documentation from the plugin page:
 
@@ -55,6 +55,12 @@ The crawler module works submitting HTTP requests through internal plugin script
 
 In the same way, if the site you are crawling implements browser password protection, you need to remove this password restriction in order to work properly.
 
+= This plugin works for ACF or Advanced Custom Fields as well? =
+
+Yes, at the end ACF works the same way that normal custom fields.
+
+You can add the custom field name in the "Content options" tab of the scan, selecting if it is an expected full URL or a content with links.
+
 == Screenshots ==
 
 1. Scan basic configuration
@@ -67,6 +73,11 @@ In the same way, if the site you are crawling implements browser password protec
 
 == Changelog ==
 
+= 1.0.1 =
+February 25th, 2016
+
+* Solved config bug when saving a running scan.
+
 = 1.0 =
 Release Date: February 11th, 2016
 
@@ -74,6 +85,9 @@ Release Date: February 11th, 2016
 * Tested code from WordPress 3.4 version.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Solved bug editing config of a running scan.
 
 = 1.0 =
 Initial Release.

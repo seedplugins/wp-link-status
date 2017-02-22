@@ -72,6 +72,15 @@ class WPLNST_Admin_Scans_Submit {
 		
 		// Empty of not completed
 		if (empty($scan) || 'end' != $scan->status) {
+			
+			// Check config for existing scan
+			if (!empty($scan) && 'wait' != $scan->status) {
+				$config = @json_decode($scan->row->config, true);
+				if (empty($config) || !is_array($config))
+					$config = array();
+			}
+			
+			// Set e-mail settings
 			$config['notify_default']		= WPLNST_Core_Types::check_post_value('ck-notify-default', 'on', false);
 			$config['notify_address']		= WPLNST_Core_Types::check_post_value('ck-notify-address', 'on', false);
 			$config['notify_address_email']	= isset($_POST['tx-notify-address-email'])? substr(trim(stripslashes($_POST['tx-notify-address-email'])), 0, 255) : '';
