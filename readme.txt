@@ -2,8 +2,8 @@
 Contributors: seedplugins, pauiglesias
 Tags: broken links, broken, links, crawler, headers, http, nofollow, redirections, scan, status, checker, url
 Requires at least: 3.4
-Tested up to: 4.5.2
-Stable tag: 1.0.2
+Tested up to: 4.6
+Stable tag: 1.0.3
 License: GPLv2 or later
 
 Link checker of all your content links and images, looking for broken links, check link redirections, warn of nofollow links, etc.
@@ -55,6 +55,10 @@ The crawler module works submitting HTTP requests through internal plugin script
 
 In the same way, if the site you are crawling implements browser password protection, you need to remove this password restriction in order to work properly.
 
+= I have activated this plugin from a multisite but seems that it does not work.
+
+Currently there is no support for network activation in multisite installs. The plugin needs to be activated locally for each single blog of your multisite. Otherwise, it is advisable to run only one scan at the same time per each blog or web server.
+
 = This plugin works for ACF or Advanced Custom Fields as well? =
 
 Yes, at the end ACF works the same way that normal custom fields.
@@ -72,6 +76,12 @@ You can add the custom field name in the "Content options" tab of the scan, sele
 1. Crawler results page
 
 == Changelog ==
+
+= 1.0.3 =
+August 7th, 2016
+
+* Changed permissions for generated files to avoid hosting conflicts like Hostgator.
+* Fixed crawling process issues when running on HTTPS sites with or without valid certificate.
 
 = 1.0.2 =
 May 30th, 2016
